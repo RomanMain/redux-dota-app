@@ -12,7 +12,7 @@ const HeroesList = ({ items, title, name }) => {
                             pathname: `/${item.id}`,
                             state: item
                         }}
-                        className={item.localized_name === name ? `'hero_item' border border-error` : 'hero_item'}
+                        className={item.localized_name.toLowerCase() === name.toLowerCase() ? `'hero_item' border border-error` : 'hero_item'}
                     >
                         <img src={`https://api.opendota.com${item.icon}`} alt={item.localized_name} className="img-responsive" />
                     </Link>
