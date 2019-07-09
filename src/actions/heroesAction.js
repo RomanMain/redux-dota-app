@@ -21,20 +21,14 @@ export function heroesIsLoading () {
 }
 
 export function heroesFetchData() {
-    return (dispatch) => {
-        dispatch(heroesIsLoading());
-        fetch('https://api.opendota.com/api/heroStats')
-            .then((response) => response.json())
-            .then((heroes) => dispatch(heroesFetchDataSuccess(heroes)))
-    };
+    return {
+        type: actionType.HEROES_FETCHED
+    }
 }
 
 export function heroFetchData() {
-    return (dispatch) => {
-        dispatch(heroesIsLoading())
-        fetch('https://api.opendota.com/api/heroes')
-            .then((response) => response.json())
-            .then((hero) => dispatch(heroesFetchDataSuccess(hero)))
+    return {
+        type: actionType.HEROES_FETCHED
     }
 }
 
